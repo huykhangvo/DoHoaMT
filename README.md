@@ -154,4 +154,46 @@
     	getch();
     	closegraph();
     }
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/Animation.gif)
+
+    #include<graphics.h>
+    #include<conio.h>
+    using namespace std;
+    main()
+    {
+    	initwindow(1000,1000);
+    	setbkcolor(15);
+    	int x=500,y=100;
+    	char key;
+    	setcolor(14);
+    	setfillstyle(1,14);
+    	while(1)
+    	{
+    		while(y<=400)
+    		{
+    			circle(x,y,100);
+    			floodfill(x,y,14);
+    			y+=5;
+    			delay(50);
+    			cleardevice();		
+    		}
+    		while(y>=200)
+    		{	
+    		circle(x,y,100);
+    		floodfill(x,y,14);
+    		y-=5;
+    		delay(50);
+    		cleardevice();
+    		}
+    		if(kbhit()){
+                key = getch();
+                if(key == 27)
+    			{
+                    break;
+                }
+    	 }
+    	}
+    	getch();
+    }
     
