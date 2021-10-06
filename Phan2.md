@@ -376,4 +376,27 @@
     	daodong();
     	while (!kbhit()) delay(1);
     }
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/image00f799b412d376e6.png)
+
+    #include<winbgim.h>
     
+    int main()
+    {
+    	initwindow(900, 1000); 
+    	setcolor(4);  
+    	
+    	int x;
+    	int y;
+    
+    	for(int i=1;i<6;i++)
+    	{
+    		moveto(40,50+i*50);
+    	 	settextstyle(0,0,i);
+    	 	outtext("Khang");
+    	}
+    	
+    	while(!kbhit());
+    		delay(1);   
+    	return 0;	
+    }
