@@ -197,3 +197,23 @@
     	getch();
     }
     
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/imageb4a66013cc330b45.png)
+
+    #include<winbgim.h>
+    int main(int argc, char *argv[])
+    {
+    	initwindow(600,600);
+    	setbkcolor(0);
+    	cleardevice();
+    	setcolor(15);
+        
+       
+    	setfillstyle(1,4);
+    	circle(300,300,100);
+        floodfill(300,300,15);
+        
+    	while(!kbhit()) delay(1);
+    	return 0;
+    }
+    
