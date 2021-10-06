@@ -1,6 +1,5 @@
-# DoHoaMT
-Bài Tập Đồ Họa Máy Tính
 ![](https://i0.wp.com/s1.uphinh.org/2021/10/06/imagee2ba65fb76cee775.png)
+
      #include <winbgim.h>
      int main(){
      	initwindow(700,500);
