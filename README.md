@@ -216,4 +216,32 @@
     	while(!kbhit()) delay(1);
     	return 0;
     }
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/imagef6bf1172a7ce05e1.png)
+
+    #include <winbgim.h> 
+    #include <stdlib.h>
+    #include <time.h> 
+    #include <stdio.h>
+    
+    int main(int argc, char *argv[])
+    {
+    	initwindow(500, 500);			
+    	setbkcolor(0);					
+    	cleardevice();
+    	int x = getmaxx()/2;
+    	int y = getmaxy()/2;
+    	int r = 0;
+    	int i;
+    	for(i=1;i<=300;i++)
+    	{
+    		//delay(10);
+    		setcolor(i/10);
+    		circle(x,y,i);
+    	}
+    		getch();	
+    	
+    	return 0;
+    }
+    	
     
