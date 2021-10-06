@@ -244,4 +244,80 @@
     	while(kbhit()) delay(1);
     	return(0);
     } 
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/image2fb9ed6d4a3607a7.png)
+
+    #include <winbgim.h> 
+    
+    int main(int argc, char *argv[])
+    {
+    	// now, you can run project
+    	initwindow(800, 800);			// init window graphics
+    	setbkcolor(0);					// set background
+       	cleardevice();
+    	setcolor(14);				
+    	//outtextxy(50,100,"Graphics in Dev-C++");// print text in window graphics
+    //	int x,y;
+    //	for(x=0;x<=800;x=x+50)
+    //	{
+    //		line(0,x,800,x);
+    //		line(x,800,x,0);
+    //	
+    //	}
+    	
+    	setcolor(2);
+    	setfillstyle(1,2);
+    	pieslice(400,150,220,320,170);
+    	
+    	setcolor(4);
+    	setfillstyle(1,4);
+    	pieslice(400,150,220,320,140);
+    	
+    	setlinestyle(0,0,1);
+    	setcolor(0);
+    	
+    	//ellipse(350,240,0,360,5,10);
+    	//setfillstyle(1,0);
+    	//floodfill(350,240,0);
+    	
+    	ellipse(372,246,0,360,5,10);
+    	setfillstyle(1,13);
+    	floodfill(372,246,0);
+    	
+    	ellipse(392,250,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(392,250,0);
+    	
+    	ellipse(330,250,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(330,250,0);
+    	
+    	ellipse(400,220,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(400,220,0);
+    	
+    	ellipse(470,220,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(470,220,0);
+    	
+    	ellipse(360,220,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(360,220,0);
+    	
+    	ellipse(420,180,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(420,180,0);
+    	
+    	ellipse(380,180,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(380,180,0);
+    	
+    	ellipse(450,270,0,360,5,10);
+    	setfillstyle(1,0);
+    	floodfill(450,270,0);
+    
+    	
+    	while(!kbhit()) delay(1);		// pause screen	
+    	return 0;
+    }
     
