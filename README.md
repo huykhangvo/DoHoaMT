@@ -338,5 +338,54 @@
     	while(!kbhit()) delay(1);		
     	return 0;
     }
+
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/imageabea5a91b6c8d45a.png)
+
+    #include <winbgim.h> 
+    typedef struct dinh
+    {
+    	int x,y;
+    };
+    dinh a,b,c,d;
+    
+    dinh tinhtien(dinh p,int tr_x,int tr_y)
+    {
+    	dinh tam;
+    	tam.x=p.x+ tr_x;
+    	tam.y=p.y+ tr_y;
+    	return tam;
     	
+    }
+    
+    int main(int argc, char *argv[])
+    {
+    	// now, you can run project
+    	initwindow(700, 700);			// init window graphics
+    	setbkcolor(0);					// set background
+       	cleardevice();
+    	setcolor(15);					// set text color
+    	//
+    	a.x=100;a.y=500;
+    	settextstyle(0,0,2);
+    	outtextxy(a.x-10,a.y+20,"A");
+    	b.x=200;b.y=300;
+    	outtextxy(b.x-10,b.y-20,"B");
+    	
+    	int tr_x=300, tr_y=-100;
+    	d=tinhtien(a, tr_x, tr_y);
+    	outtextxy(d.x-10,d.y+20,"D");
+    	c=tinhtien(b,tr_x, tr_y);
+    	outtextxy(c.x-10,c.y-20,"C");
+    	//
+    	moveto(a.x,a.y);
+    	lineto(b.x,b.y);
+    	lineto(c.x,c.y);
+    	lineto(d.x,d.y);
+    	lineto(a.x,a.y);
+    	
+    	
+    	while(!kbhit()) delay(1);		// pause screen	
+    	return 0;
+    }
     
