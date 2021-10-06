@@ -320,4 +320,60 @@
     	while(!kbhit()) delay(1);		// pause screen	
     	return 0;
     }
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/6.gif)
+
+    #include <winbgim.h>
+    #include <conio.h>
+    #include <math.h>
+    #include <dos.h>
+    
+    #define RADS 0.017453293
+    #define BIENDO 50
+    #define DAY 200
+    #define RADIUS 20
+    
+    void daodong()
+    {
+    	int goc = BIENDO, congtru = 0;
+    	double x, y, xgoc, ygoc;
+    	
+    	xgoc = getmaxx() / 2;
+    	ygoc = 10;
+    	line(int(xgoc - 5), int(ygoc), int(xgoc + 5), int(ygoc));
+    	do
+    	{
+    		x = xgoc + DAY * sin(goc* RADS);
+    		y = ygoc + DAY * cos(goc* RADS);
+    		setcolor(14);
+    		line(int(xgoc),int(ygoc),int(x),int(y));
+    		setfillstyle(2,2);
+    		setcolor(2);
+    		fillellipse(int(x),int(y),RADIUS,RADIUS);
+    		delay(30);
+    		setcolor(0);
+    		line(int(xgoc),int(ygoc),int(x),int(y));
+    		setfillstyle(2,0);
+    		setcolor(0);
+    		fillellipse(int(x),int(y),RADIUS,RADIUS);
+    		if(congtru)
+    		{
+    			goc ++;
+    			if(goc==BIENDO)
+    			congtru=0;
+    		}
+    		else
+    		{
+    			goc--;
+    			if (goc==-BIENDO)
+    				congtru=-1;
+    		}
+    	}while(!kbhit());
+    }
+    int main(int agvc,char *agvr[])
+    {
+    	initwindow(600,600);
+    	daodong();
+    	while (!kbhit()) delay(1);
+    }
     
