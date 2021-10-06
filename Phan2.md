@@ -196,4 +196,52 @@
     	
     	getch();
     } 
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/5.gif)
+
+    	
+     #include<winbgim.h>
+    	int main(){
+    	initwindow(700,700);
+    	cleardevice();
+    	setbkcolor(0);
+    	setcolor(14);
+    	setfillstyle(1,14);
+    
+    	int x=0;
+    	int y=0;
+    	while(!kbhit()){
+    	while(y<=getmaxy()-100 && !kbhit()){
+    	cleardevice();
+    	rectangle(x,y,x+100,y+100);
+    	floodfill(x+10,y+10,14);
+    	y+=10;
+    	delay(20);
+    	}
+    	while(x<=getmaxx()-100 && !kbhit()){
+    	cleardevice();
+    	rectangle(x,y,x+100,y+100);
+    	floodfill(x+10,y+10,14);
+    	x+=10;
+    	delay(20);
+    	}
+    	while(y>=0 && !kbhit()){
+    	cleardevice();
+    	rectangle(x,y,x+100,y+100);
+    	floodfill(x+10,y+10,14);
+    	y-=10;
+    	delay(20);
+    	}
+    	while(x>=0 && !kbhit()){
+    	cleardevice();
+    	rectangle(x,y,x+100,y+100);
+    	floodfill(x+10,y+10,14);
+    	x-=10;
+    	delay(20);
+    	}
+    	}
+    	
+    	while(kbhit()) delay(1);
+    	return(0);
+    } 
     
