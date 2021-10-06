@@ -1,4 +1,4 @@
-![](https://i0.wp.com/s1.uphinh.org/2021/10/06/imagee2ba65fb76cee775.png)
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/imagef923d61af5bc03fe.png)
 
      #include <winbgim.h>
      int main(){
@@ -25,3 +25,5 @@
     	while(!kbhit()) delay(1);
     	return 0;	
      }
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/image55f99047c8238c06.png)
