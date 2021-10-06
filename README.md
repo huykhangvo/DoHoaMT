@@ -282,3 +282,61 @@
     	return 0;
     }
 
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/image0e8d7ce312f5aacc.png)
+
+    #include <winbgim.h> 
+    #include <stdlib.h>
+    #include <time.h>
+    
+    int main(int argc, char *argv[])
+    {
+    	initwindow(800, 600);			
+    	setbkcolor(0);					
+    	cleardevice();
+    	setcolor(15);
+    	
+    	int x, y;
+    	x = y = 400;
+    	int r = 70;
+    	
+    
+    	setcolor(15);
+    	int m = 30;
+    	x = getmaxx();
+    	y = getmaxy();
+    	//ve truc
+    	moveto(m,m);
+    	linerel(0, y-2*m);
+    	linerel(x-2*m, 0);
+    //ve so 0
+    //	outtextxy(m,y-2*m+m+5,"O");
+    	//chu x va y
+    //	outtextxy(x-2*m+m,y-2*m+m,"x");
+    //	outtextxy(m+5,m,"y");
+    	//ve mui ten
+    	moveto(m,m);
+    	linerel(-5,5);
+    	moveto(m,m);
+    	linerel(5,5);
+    	moveto(x-2*m+m,y-2*m+m);
+    	linerel(-5,-5);
+    moveto(x-2*m+m,y-2*m+m);
+    	linerel(-5,5);
+    	//ve tru ngau nhien
+    	srand(time(NULL));
+    	int i = 0;
+    	int x1, y1;
+    	while(i++ < 10){
+    		int a = rand()%(x-m)+2*m;
+    		x1 = y1 = a;
+    		if(a < y-m)
+    			rectangle(x1, y1, x1+10, y-m);
+    	}
+    	
+    	
+    	
+    	while(!kbhit()) delay(1);		
+    	return 0;
+    }
+    	
+    
