@@ -388,4 +388,177 @@
     	while(!kbhit()) delay(1);		// pause screen	
     	return 0;
     }
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/image69bd5c116ef20ae9.png)
+    #include <winbgim.h> 
+    #include <ctime>
+    #include<math.h>
+    using namespace std;
+    	typedef struct dinh {
+    		int x,y;
+    		int x0,y0;
+    	};
+    	dinh a, b, c,d, e, f;
+        float Pi = 3.14;
+    	dinh tinhtien(dinh p, int tr_x,int tr_y){
+    	dinh tam;
+    	tam.x=p.x+tr_x;
+    	tam.y=p.y+tr_y;
+    	return tam;
+    	}
+       dinh quay(dinh a,double g) {
+    		dinh tam;
+    		tam.x=cos((g*Pi)/180)*a.x-sin((g*Pi)/180)*a.y;
+    		tam.y=sin((g*Pi)/180)*a.x+cos((g*Pi)/180)*a.y;
+    		return tam;
+    	}
+    	dinh phongto(dinh p, float tl){
+    	dinh tam;
+    	tam.x=p.x*tl;
+    	tam.y=p.y*tl;
+    	return tam;
+    	}
+    
+    int main(int argc, char *argv[])
+    {
+    	// now, you can run project
+    	initwindow(900, 900);			// init window graphics
+    	setbkcolor(0);					// set background
+       	cleardevice();
+    	setcolor(15);					// set text color
+    	//outtextxy(50,100,"Graphics in Dev-C++");// print text in window graphics
+    //Cau1
+    /*	a.x=100;
+    	a.y=500;
+    	settextstyle(0,0,2);
+    	outtextxy(a.x-10,a.y+20,"A");
+    	b.x=200;b.y=300;
+    	outtextxy(b.x-10,b.y-20,"B");
+    	int tr_x=300,tr_y=-100;
+    	d=tinhtien(a,tr_x,tr_y);
+    	outtextxy(d.x-10,d.y+20,"D");
+    	c=tinhtien(b,tr_x,tr_y);
+    	outtextxy(c.x-10,c.y-20,"C");
+    	moveto(a.x,a.y);
+    	lineto(b.x,b.y);
+    	lineto(c.x,c.y);
+    	lineto(d.x,d.y);
+    	lineto(a.x,a.y);
+    */
+    //câu2
+    	a.x=200;
+    	a.y=200;
+    	b.x=300;
+    	b.y=300;
+    	rectangle(a.x,a.y,b.x,b.y);
+    	c=quay(a,-45);
+    	d=quay(b,-45);
+    	rectangle(c.x,c.y,d.x,d.y);
+    
+    //phóng to
+    	a.x=200;
+    	a.y=200;
+    	b.x=300;
+    	b.y=300;
+    	rectangle(a.x,a.y,b.x,b.y);
+    	c=phongto(a,2);
+    	d=phongto(b,2);
+    	rectangle(c.x,c.y,d.x,d.y);
+        int tr_x=0,tr_y=-300;
+    	e=tinhtien(c,tr_x,tr_y);
+    	f=tinhtien(d,tr_x,tr_y);
+    	rectangle(e.x,e.y,f.x,f.y);
+    
+    //câu 3
+    	/*a.x=200;
+    	a.y=200;
+    	b.x=300;
+    	b.y=300;
+        rectangle(a.x,a.y,b.x,b.y);
+    while(true){
+    	//  char h = getch();
+            char h = getch();
+            if(h == -32){
+                h = getch();
+                if(h == 72){
+                //int tr_x=0,tr_y=-10;
+    			d=tinhtien(a,0,-10);
+    			c=tinhtien(b,0,-10);
+    			rectangle(c.x,c.y,d.x,d.y);
+                }
+                if(h == 80){
+                d=tinhtien(a,0,10);
+    			c=tinhtien(b,0,10);
+    			rectangle(c.x,c.y,d.x,d.y);
+                }
+                if(h == 75){ 
+    			d=tinhtien(a,-10,0);
+    			c=tinhtien(b,-10,0);
+    			rectangle(c.x,c.y,d.x,d.y);
+                }
+                if(h == 77){
+                    d=tinhtien(a,10,0);
+    			c=tinhtien(b,10,0);
+    			rectangle(c.x,c.y,d.x,d.y);
+                }
+                if(h == 27) break;
+            }
+            return 0;
+        }
+        //T?nh tien
+    	a.x=200;
+    	a.y=200;
+    	b.x=300;
+    	b.y=300;
+    	rectangle(a.x,a.y,b.x,b.y);
+    	tr_x=200,tr_y=0;
+    	d=tinhtien(a,tr_x,tr_y);
+    	c=tinhtien(b,tr_x,tr_y);
+    	rectangle(c.x,c.y,d.x,d.y);
+    
+    int x=500,y=400,x1=550,y1=450;
+    	char key;
+    	rectangle(x,y,x1,y1);
+     char key_press;
+        int ascii_value;
+        while(1)
+        {
+            key_press=getch();
+            ascii_value=key_press;
+            if(ascii_value==27) // For ESC
+                break;
+    		switch(ascii_value){
+    			case 72: //len
+    				y-=10;
+    				y1-=10;
+    				
+    				rectangle(x,y,x1,y1);
+    				break;
+    			case 80: //xuong
+    				y+=10;
+    				y1+=10;
+    				
+    				rectangle(x,y,x1,y1);
+    				break;
+    			case 75: //trai
+    				x-=10;
+    				x1-=10;
+    				
+    				rectangle(x,y,x1,y1);
+    				break;
+    case 77: //phai
+    				x+=10;
+    				x1+=10;
+    				
+    				rectangle(x,y,x1,y1);
+    				break;
+    				
+    		}
+        }
+        return 0;
+    
+    */
+    	while(!kbhit()) delay(1);		// pause screen	
+    	return 0;
+    }
     
