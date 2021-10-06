@@ -115,4 +115,43 @@
     	closegraph();
     	
     }
+
+![](https://i0.wp.com/s1.uphinh.org/2021/10/06/imagef170882e9e995152.png)
+
+    #include <graphics.h>
+    #include <math.h>
+    float t = 0.0;
+    float x, y;
+    void vebanhxe()
+    {
+    	int x1,  y1, x2, y2;
+    	circle(int(x), int(y), 20);
+    	x1= int(x - 20 * cos(t));
+    	y1= int(y - 20 * sin(t));
+    	x2= int(x + 20 * cos(t));
+    	y2= int(y + 20 * sin(t));
+    	line(x1, y1, x2, y2);
+    }
+    main()
+    {
+    	int gd = DETECT, gm ;
+    	initgraph(&gd, &gm, "");
+    	line(0, 321, getmaxx(), 321);
+    	x = 100;
+    	y = 300;
+    	while (!kbhit())
+    	{
+    		setcolor(7);
+    		vebanhxe();
+    		delay(10);
+    		setcolor(2);
+    		vebanhxe();
+    		t += 0.05;
+    		x += 1 ;
+    		if (x > getmaxx() + 20)
+    			x = 0;
+    	}
+    	getch();
+    	closegraph();
+    }
     
